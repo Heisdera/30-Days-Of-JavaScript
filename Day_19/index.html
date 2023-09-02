@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-19</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Closure
+      /*
+      function outerFunction() {
+        let count = 0
+        function innerFunction() {
+          count ++
+          return count
+        }
+        return innerFunction
+      }
+      const innerFunc = outerFunction()
+
+      console.log(innerFunc())
+      console.log(innerFunc())
+      console.log(innerFunc())
+      */
+
+      // more examples of inner functions
+      function outerFunction() {
+        let count = 0;
+        function plusOne() {
+          count++;
+          return count;
+        }
+        function minusOne() {
+          count--;
+          return count;
+        }
+        return {
+          plusOne: plusOne(),
+          minusOne: minusOne(),
+        };
+      }
+      const innerFunc = outerFunction();
+
+      console.log(innerFunc.plusOne);
+      console.log(innerFunc.minusOne);
+    </script>
+  </body>
+</html>

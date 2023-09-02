@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-07</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //     FUNCTION    //
+      /*  Function Declaration
+        function showMessage() {
+          alert('Hello everyone');
+        }
+        showMessage();
+        showMessage();
+      */
+
+      /*  Local Variable
+        function showMessage() {
+          let message = "Hello I'm JavaScript";
+          alert(message);
+        }
+        showMessage();
+        alert(message); // Error
+      */
+
+      // Outer Variable
+      /*  let userName = 'Raphael';
+
+        function showMessage() {
+          let message = 'Hello, ' + userName;
+          alert(message);
+        }
+
+        showMessage();
+      */
+
+      // the function has full access to outer variable. It can modify it as well. For instance:
+
+      /*  let userName = 'Raphael';
+
+        function showMessage() {
+          userName = 'Wisdom';
+
+          let message = 'Hello, ' + userName;
+          alert(message);
+        }
+
+        alert(userName); // Raphael before the function call
+        showMessage();
+        alert(userName); // Fuction modified it to Wisdom
+      */
+
+      /*  let userName = 'Raphael'; // Global variable
+
+        function showMessage() {
+          let userName = 'Wisdom'; // declare a local variable, it did not modify the outer variable
+
+          let message = 'Hello ' + userName;
+          alert(message);
+        }
+
+        showMessage();
+
+        alert(userName); // Raphael unchanged, the funtion did not access the outer variable
+      */
+
+      //    Parameters    //
+      /*
+        function showMessage(from, text) {
+          alert(from + ': ' + text);
+        }
+        showMessage('Ann', 'Hello');
+        showMessage('Ann', "What's up?");
+      */
+
+      /*
+        function showMessage(from, text) {
+          from = '*' + from + '*';
+          alert(from + ': ' + text);
+        }
+        let from = 'Ann';
+        showMessage(from, 'Hello');
+        alert(from);
+      */
+
+      // Returning a value
+      // function sum(a, b) {
+      //   return a + b;
+      // }
+
+      // let result = sum(1, 2);
+      // alert(result);
+
+      // function checkAge(age) {
+      //   if (age >= 18) {
+      //     return true;
+      //   } else {
+      //     return confirm('Do you have permission from your parents?');
+      //   }
+      // }
+
+      // let age = prompt('How old are you?', 18);
+      // if (checkAge(age)) {
+      //   alert('Access granted');
+      // } else {
+      //   alert('access denied');
+      // }
+
+      // function showMovie(age) {
+      //   if (!checkAge(age)) {
+      //     return;
+      //   }
+      //   alert('showing you the movies');
+      // }
+
+      // function doNothing() {
+      //   return;
+      // }
+
+      // alert(doNothing() === undefined);
+
+      // function showPrimes(n) {
+      //   nextPrime: for (let i = 2; i < n; i++) {
+      //     for (let j = 2; j < i; j++) {
+      //       if (i % j == 0) continue nextPrime;
+      //     }
+      //     alert(i);
+      //   }
+      // }
+      // showPrimes(22);
+
+      function showPrimes(n) {
+        for (let i = 2; i < n; i++) {
+          if (!isPrime(i)) continue;
+
+          alert(i);
+        }
+      }
+      function isPrime(n) {
+        for (let i = 2; i < n; i++) {
+          if (n % i == 0) return false;
+        }
+        return true;
+      }
+      showPrimes(22);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-3: Event Listeners</title>
+  </head>
+  <body>
+    <!-- 1. input value -->
+    <!-- <h1>Body Mass Index Calculator</h1>
+
+    <input type="text" id="mass" placeholder="Mass in kilogram" />
+    <input type="text" id="height" placeholder="Height in meters" />
+    <button>Calculate BMI</button>
+
+    <script>
+      const mass = document.querySelector('#mass');
+      const height = document.querySelector('#height');
+      const button = document.querySelector('button');
+
+      let bmi;
+      button.addEventListener('click', () => {
+        bmi = mass.value / height.value ** 2;
+        alert(`your bmi is ${bmi.toFixed(2)}`);
+        console.log(bmi);
+      });
+    </script> -->
+
+    <!-- 2. input event and change -->
+    <!-- <h1>Data Binding using input or change event</h1>
+
+    <input type="text" placeholder="say something" />
+    <p></p>
+
+    <script>
+      const input = document.querySelector('input');
+      const p = document.querySelector('p');
+
+      input.addEventListener('input', (e) => {
+        p.textContent = e.target.value;
+      });
+    </script> -->
+
+    <!-- 3. blur event -->
+    <!-- <h1>Giving feedback using blur event</h1>
+    <input type="text" id="mass" placeholder="say something" />
+    <p></p>
+
+    <script>
+      const input = document.querySelector('input');
+      const p = document.querySelector('p');
+
+      input.addEventListener('blur', (e) => {
+        p.textContent = 'Field is required';
+        p.style.color = 'red';
+      });
+    </script> -->
+
+    <!-- 4. keypress, keydown and keyup -->
+    <h1>Key events: Press any key</h1>
+
+    <script>
+      document.body.addEventListener('keypress', (e) => {
+        alert(e.keyCode);
+      });
+    </script>
+  </body>
+</html>

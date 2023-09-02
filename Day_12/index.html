@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-12</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //      Regular Expression      //
+      //  RegExp Object Methods
+      // 1. test()
+      // const str = 'I love JavaScript';
+      // const pattern = /love/;
+      // const result = pattern.test(str);
+      // console.log(result);
+
+      // 2. match()
+      // const str = 'I love JavaScript';
+      // const pattern = /love/;
+      // const result = str.match(pattern);
+      // console.log(result); // match() without global flag --- g
+
+      // const str = 'I love JavaScript';
+      // const pattern = /love/g;
+      // const result = str.match(pattern);
+      // console.log(result);
+
+      // 3. replace()
+      const txt =
+        'Python is the most beautiful language a human being has ever created. \ I recommend python for a first programming language';
+      matchReplaced = txt.replace(/Python|python/, 'JavaScript');
+      console.log(matchReplaced);
+
+      const txt1 =
+        'Python is the most beautiful language a human being has ever created. \ I recommend python for a first programming language';
+      matchReplaced = txt1.replace(/Python|python/g, 'JavaScript');
+      console.log(matchReplaced);
+
+      const txt2 =
+        'Python is the most beautiful language a human being has ever created. \ I recommend python for a first programming language';
+      matchReplaced = txt2.replace(/Python/gi, 'JavaScript');
+      console.log(matchReplaced);
+
+      //  Meta Characters
+      // 1. square bracket []
+      const pattern = '[Aa]pple'; // this square bracket means either A or a
+      const txt3 =
+        'Apple and banana are fruits. An old cliche says an apple a day keeps the doctor away has been replaced by a banana a day keeps the doctor far far away.';
+      const matches = txt3.match(pattern);
+      console.log(matches);
+
+      const pattern1 = /[Aa]pple/g; // this square bracket means either A or a
+      const txt4 =
+        'Apple and banana are fruits. An old cliche says an apple a day keeps the doctor away has been replaced by a banana a day keeps the doctor far far away.';
+      const matches1 = txt4.match(pattern1);
+      console.log(matches1);
+
+      const pattern2 = /[Aa]pple|[Bb]anana/g; // this square bracket means either A or a
+      const txt5 =
+        'Apple and banana are fruits. An old cliche says an apple a day keeps the doctor away has been replaced by a banana a day keeps the doctor far far away. Banana is easy to eat too.';
+      const matches2 = txt5.match(pattern2);
+      console.log(matches2);
+
+      // 2. escape character(\) in RegExp
+      const pattern3 = /\d/g; // d is a special character which means digits
+      const txt6 = 'This regular expression example was made in June 6, 2023.';
+      const matches3 = txt6.match(pattern3);
+      console.log(matches3);
+
+      // 3. one or more times(+)
+      const pattern4 = /\d+/g; // d is a special character which means digits
+      const txt7 = 'This regular expression example was made in June 6, 2023.';
+      const matches4 = txt7.match(pattern4);
+      console.log(matches4);
+
+      // 4. period(.)
+      // const pattern5 = /[a]./g; // this square bracket means a and . means any character except new line
+      // const txt8 = 'Apples and banana are fruits';
+      // const matches5 = txt8.match(pattern5);
+      // console.log(matches5);
+
+      // const pattern6 = /[a].+/g; // . means any character, + means any character one or more times
+      // const txt9 = 'Apples and banana are fruits';
+      // const matches6 = txt9.match(pattern6);
+      // console.log(matches6);
+
+      // 5. zero or many times
+      const pattern5 = /[a].*/g; // . any character, * any character one or many times
+      const txt8 = 'Apples and banana are fruits';
+      const matches5 = txt8.match(pattern5);
+      console.log(matches5);
+
+      // 6. zero or one time(?)
+      const txt9 =
+        'I am not sure if there is a convention how to write the word e-mail.\ Some people write it as email others may write it as Email or E-mail.';
+      const pattern6 = /[Ee]-?mail/g; // ? means optional
+      const matches6 = txt9.match(pattern6);
+      console.log(matches6);
+
+      // 7. quantifier in RegExp {length of characters in here}
+      const txt10 = 'This regular expression example was made in June 7, 2023.';
+      const pattern7 = /\b\w{4}\b/g; // exactly four words character
+      const matches7 = txt10.match(pattern7);
+      console.log(matches7);
+
+      const txt11 = 'This regular expression example was made in June 7, 2023.';
+      const pattern8 = /\b[a-zA-Z]{4}\b/g; // exactly four words character without numbers
+      const matches8 = txt11.match(pattern8);
+      console.log(matches8);
+
+      const txt12 = 'This regular expression example was made in June 7, 2023.';
+      const pattern9 = /\d{4}/g; // exactly four digit numbers
+      const matches9 = txt12.match(pattern9);
+      console.log(matches9);
+
+      const txt13 = 'This regular expression example was made in June 7, 2023.';
+      const pattern10 = /\d{1,4}/g; // 1 to four digit numbers
+      const matches10 = txt13.match(pattern10);
+      console.log(matches10);
+
+      // 8. cart ^
+      // --- ( ^ as start with )
+      const txt14 = 'This regular expression example was made in June 7, 2023.';
+      const pattern11 = /^This/g; // ^ means start with
+      const matches11 = txt14.match(pattern11);
+      console.log(matches11);
+
+      // --- ( ^ as negation )
+      const txt15 = 'This regular expression example was made in June 7, 2023.';
+      const pattern12 = /[^A-Za-z,. ]+/g; // ^ in set character means negation, not A-Z, not a-z, no comma, no period, no space
+      const matches12 = txt15.match(pattern12);
+      console.log(matches12);
+
+      // 9. Exact match - starts with ^ and ends with $
+      let pattern13 = /^[A-Z][a-z]{3,12}$/;
+      let name = 'Wisdom';
+      let result = pattern13.test(name);
+      console.log(result);
+    </script>
+  </body>
+</html>

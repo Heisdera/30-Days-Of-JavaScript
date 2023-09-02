@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-18</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Promise
+      /*
+      const doPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const skills = ['HTML', 'CSS', 'JS'];
+          if (skills.length > 0) {
+            resolve(skills);
+          } else {
+            reject('Something wrong has happened');
+          }
+        }, 2000);
+      });
+
+      doPromise
+        .then((result) => console.log(result))
+        .catch((error) => console.log(error));
+      */
+
+      // The above promise has been settled with resolve. Let us another example when the promise is settled with reject.
+      // Promise
+      /*
+      const doPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const skills = ['HTML', 'CSS', 'JS'];
+          if (skills.includes('Node')) {
+            resolve('fullstack developer');
+          } else {
+            reject('Something wrong has happened');
+          }
+        }, 2000);
+      });
+
+      doPromise
+        .then((result) => console.log(result))
+        .catch((error) => console.error(error));
+      */
+
+      // Async
+      /* 
+      const square = async function (n) {
+        return n * n
+      }
+
+      console.log(square(2)) 
+      */
+
+      // Await
+      const square = async function (n) {
+        return n * n;
+
+        const value = await square(2); // we use await to get the value from a promise
+        console.log(value);
+      };
+
+      // using promise method and async and await method to get the same result
+      // promise method
+      const url = 'https://restcountries.com/v2/all';
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error(error));
+
+      // asynch and await method
+      const fetchData = async () => {
+        try {
+          const response = await fetch(url);
+          const countries = await response.json();
+          console.log(countries);
+        } catch (err) {
+          console.error(err);
+        }
+      };
+      // console.log('===== async and await')
+      fetchData();
+    </script>
+  </body>
+</html>

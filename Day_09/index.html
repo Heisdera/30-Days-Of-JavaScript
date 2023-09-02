@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-09</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const product = ['Milk', 'Coffee', 'Sugar', 'Honey', 'Apple', 'Carrot'];
+      console.log(product.sort());
+
+      const numbers = [9.81, 3.14, 100, 37];
+      // numbers.sort(function (a, b) {
+      //   return a - b;
+      // });
+      //      OR
+      numbers.sort((a, b) => a - b);
+
+      console.log(numbers);
+
+      // numbers.sort(function (a, b) {
+      //   return b - a;
+      // });
+      //      OR
+      numbers.sort((a, b) => b - a);
+
+      console.log(numbers);
+
+      const users = [
+        { name: 'Raphael', age: 150 },
+        { name: 'Wisdom', age: 50 },
+        { name: 'Chidera', age: 100 },
+        { name: 'Dera', age: 20 },
+      ];
+      users.sort((a, b) => {
+        if (a.age < b.age) return -1;
+        if (a.age > b.age) return 1;
+        return 0;
+      });
+      console.log(users);
+
+      // // let sum = 0;
+      // const numbas = [1, 2, 3, 4, 5];
+      // // numbas.forEach((num) => (sum += num));
+      // const sum = numbas.reduce((acc, cur) => acc + cur, 0);
+      // console.log(sum);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day_23: Document Object Model(DOM)-3</title>
+  </head>
+  <body>
+    <button>Click Me</button>
+    <script>
+      //  --- Event Listeners
+      // 1. click
+      const button = document.querySelector('button');
+      button.addEventListener('click', (e) => {
+        console.log('e gives the event listener object: \n', e);
+        console.log('e.target gives the selected element: \n', e.target);
+        console.log(
+          'e.target.textContent gives the content of selected element: \n',
+          e.target.textContent
+        );
+      });
+
+      // 2. double click -  dblclick
+      // const button = document.querySelector('button');
+      // button.addEventListener('dblclick', (e) => {
+      //   console.log(e);
+      //   console.log(e.target);
+      //   console.log(e.target.textContent);
+      // });
+
+      // 3. mouseenter
+      // const button = document.querySelector('button');
+      // button.addEventListener('mouseenter', (e) => {
+      //   console.log(e);
+      //   console.log(e.target);
+      //   console.log(e.target.textContent);
+      // });
+
+      // 4. mouseleave
+      // const button = document.querySelector('button');
+      // button.addEventListener('mouseleave', (e) => {
+      //   console.log(e);
+      //   console.log(e.target);
+      //   console.log(e.target.textContent);
+      // });
+
+      // 5. mousemove
+      // const button = document.querySelector('button');
+      // button.addEventListener('mousemove', (e) => {
+      //   console.log(e);
+      //   console.log(e.target);
+      //   console.log(e.target.textContent);
+      // });
+
+      // 6. mouseover
+      // const button = document.querySelector('button');
+      // button.addEventListener('mouseover', (e) => {
+      //   console.log(e);
+      //   console.log(e.target);
+      //   console.log(e.target.textContent);
+      // });
+
+      // 7. mouseout
+      // const button = document.querySelector('button');
+      // button.addEventListener('mouseout', (e) => {
+      //   console.log(e);
+      //   console.log(e.target);
+      //   console.log(e.target.textContent);
+      // });
+
+      // 8. input - when value enter to input field
+      // 9. change - when value change on input field
+      // 10. blur - when the element is not focused
+
+      //  - KeyboardEvents
+      // 11. keydown - use keyboard arrow key down
+      // const button = document.querySelector('button');
+      // button.addEventListener('keydown', (e) => {
+      //   console.log(e);
+      //   console.log(e.target);
+      //   console.log(e.target.textContent);
+      // });
+
+      // 12. keyup - use keyboard arrow key up
+      // const button = document.querySelector('button');
+      // button.addEventListener('keyup', (e) => {
+      //   console.log(e);
+      //   console.log(e.target);
+      //   console.log(e.target.textContent);
+      // });
+
+      // 13. keypress - when we press any key
+      // const button = document.querySelector('button');
+      // button.addEventListener('keypress', (e) => {
+      //   console.log(e);
+      //   console.log(e.target);
+      //   console.log(e.target.textContent);
+      // });
+
+      // 14. onload - when the browser has finished loading a page
+      // const button = document.querySelector('button');
+      // button.addEventListener('onload', (e) => {
+      //   console.log(e);
+      //   console.log(e.target);
+      //   console.log(e.target.textContent);
+      // });
+    </script>
+  </body>
+</html>
